@@ -63,8 +63,6 @@ export function EmailForm() {
             exit={{ opacity: 0, filter: 'blur(10px)' }}
             name="founding-members"
             method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
             className="absolute inset-0 block w-full group h-[56px]"
           >
