@@ -1,0 +1,31 @@
+<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    SECRET ROAST - "THE HIDDEN" LOGO
+    Optimized for Tailwind V4
+    Color: oklch(96% 0.01 70) [Roast Cream]
+  -->
+  <path d="M200 40C120 40 40 100 20 120C40 140 120 160 200 160C280 160 360 140 380 120C360 100 280 40 200 40Z" stroke="currentColor" stroke-width="2" />
+  
+  <!-- Leaf Veins (Organic texture) -->
+  <path d="M70 85L120 145" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M120 65L180 155" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M180 50L240 155" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M250 55L310 140" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M300 75L350 125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+  
+  <!-- Central Reveal Cutout -->
+  <path d="M140 110C160 85 240 85 260 110L250 115C230 95 170 95 150 115L140 110Z" fill="currentColor" />
+  
+  <!-- The Eyes -->
+  <circle cx="185" cy="105" r="4" fill="currentColor" />
+  <circle cx="215" cy="105" r="4" fill="currentColor" />
+  
+  <!-- Fingers Peeking -->
+  <path d="M145 112V122" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M152 115V125" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M159 112V122" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+  
+  <path d="M241 112V122" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M248 115V125" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M255 112V122" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+</svg>

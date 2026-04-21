@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-roast-black: #0A0705;
-  --color-roast-espresso: #1C1009;
-  --color-roast-charcoal: #2D2118;
-  --color-roast-brown: #6B3D1E;
-  --color-roast-amber: #C8702A;
-  --color-roast-gold: #E8A84C;
-  --color-roast-cream: #F5ECD7;
-  --color-roast-fog: #A89880;
+  --color-roast-black: oklch(8% 0.02 50);
+  --color-roast-charcoal: oklch(20% 0.03 50);
+  --color-roast-brown: oklch(35% 0.1 50);
+  --color-roast-amber: oklch(62% 0.22 65);
+  --color-roast-gold: oklch(76% 0.16 80);
+  --color-roast-cream: oklch(96% 0.01 70);
+  --color-roast-fog: oklch(72% 0.02 70);
 
   --font-sans: var(--font-dm-sans);
   --font-serif: var(--font-playfair);
   --font-mono: var(--font-space-mono);
 
   --animate-ken-burns: ken-burns 8s ease-out forwards;
+}
+
+@utility vignette-overlay {
+  background: radial-gradient(circle at center, transparent 0%, var(--color-roast-black) 80%);
 }
 
 @utility animate-ken-burns {
@@ -40,11 +43,21 @@ body {
   background-color: var(--color-roast-black);
   color: var(--color-roast-cream);
   font-family: var(--font-sans);
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background: radial-gradient(circle at center, transparent 20%, oklch(8% 0.02 50 / 0.4) 100%);
 }
 
 ::selection {
-  background: #C8702A;
-  color: #F5ECD7;
+  background: var(--color-roast-amber);
+  color: var(--color-roast-cream);
 }
 
 @keyframes marquee_20s_linear_infinite {

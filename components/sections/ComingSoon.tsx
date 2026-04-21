@@ -10,7 +10,7 @@ export function ComingSoon() {
   const marqueeItems = new Array(10).fill(marqueeText);
 
   return (
-    <section className="relative bg-[#0C0907] overflow-hidden flex flex-col border-none p-6 sm:p-12 items-center">
+    <section className="relative bg-[var(--color-roast-black)] overflow-hidden flex flex-col border-none p-6 sm:p-12 items-center">
       {/* Top vanishing divider */}
       <div className="absolute top-0 left-0 right-0 h-divider-vanishing opacity-50" />
 

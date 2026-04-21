@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { maskReveal, staggerContainer, fadeUp } from '@/lib/animations';
 import { ArrowDown } from 'lucide-react';
 import { SteamEffect } from '@/components/ui/SteamEffect';
+import { Logo } from '@/components/ui/Logo';
 
 export function Hero() {
   const words = ['SECRET', 'ROAST'];
@@ -26,14 +27,22 @@ export function Hero() {
       </div>
 
       <div className="relative z-20 w-full p-6 lg:p-12 pt-24 sm:pt-12">
+        {/* LOGO WATERMARK */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[500px] h-auto opacity-[0.05] mix-blend-overlay pointer-events-none -z-10">
+          <Logo className="w-full h-auto" />
+        </div>
+
         <div className="flex flex-col items-start xl:max-w-3xl">
           {/* Tagline Top */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-8"
+            className="mb-8 flex flex-col items-start"
           >
+            {/* HEROWATERMARK LOGO - Smaller sub-mark */}
+            <Logo className="w-20 h-auto opacity-20 mb-4 -ml-2" />
+            
             <span className="font-mono text-[10px] sm:text-xs text-[var(--color-roast-amber)] tracking-[0.2em] sm:tracking-[0.3em] uppercase">
               Est. Guatemala
             </span>
@@ -49,9 +58,9 @@ export function Hero() {
             animate="visible"
           >
             {words.map((word, i) => (
-              <span key={i} className="block overflow-hidden pb-1 sm:pr-8">
+              <span key={i} className="block overflow-hidden pb-1 pr-12">
                 <motion.span
-                  className="block italic"
+                  className="inline-block italic pr-4"
                   variants={maskReveal}
                 >
                   {word}

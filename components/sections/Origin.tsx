@@ -43,8 +43,8 @@ export function Origin() {
             variants={fadeUp}
             className="font-serif text-5xl sm:text-6xl lg:text-7xl text-[var(--color-roast-cream)] editorial-headline"
           >
-            From the <br className="hidden sm:block text-white" />
-            <span className="italic font-black">Highlands.</span>
+            From the <br className="hidden sm:block" />
+            <span className="italic font-black text-[var(--color-roast-cream)]">Highlands.</span>
           </motion.h2>
 
           {/* Body */}

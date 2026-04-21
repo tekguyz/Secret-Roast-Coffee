@@ -15,9 +15,12 @@ export function EmailForm() {
     const formData = new FormData(form);
 
     try {
-      await fetch('/', {
+      await fetch('/__forms.html', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
         body: new URLSearchParams(formData as any).toString(),
       });
       setStatus('success');
@@ -63,6 +66,7 @@ export function EmailForm() {
             exit={{ opacity: 0, filter: 'blur(10px)' }}
             name="founding-members"
             method="POST"
+            action="/__forms.html"
             onSubmit={handleSubmit}
             className="absolute inset-0 block w-full group h-[56px]"
           >
@@ -75,7 +79,7 @@ export function EmailForm() {
               placeholder="your@email.com"
               required
               disabled={status === 'submitting'}
-              className="w-full h-full bg-[var(--color-roast-espresso)] border border-[var(--color-roast-charcoal)] px-6 pr-32 sm:pr-40 text-[var(--color-roast-cream)] font-mono text-sm placeholder:text-[var(--color-roast-charcoal)] focus:outline-none focus:border-[var(--color-roast-gold)] focus:shadow-[0_0_20px_rgba(232,168,76,0.15)] transition-all duration-300 disabled:opacity-50"
+              className="w-full h-full bg-[var(--color-roast-espresso)] border border-[var(--color-roast-charcoal)] px-6 pr-32 sm:pr-40 text-[var(--color-roast-cream)] font-mono text-sm placeholder:text-[var(--color-roast-charcoal)] focus:outline-none focus:border-[var(--color-roast-gold)] focus:shadow-[0_0_20px_oklch(76%_0.16_80_/_0.15)] transition-all duration-300 disabled:opacity-50"
             />
             
             <button 

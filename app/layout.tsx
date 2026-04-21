@@ -25,6 +25,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://secretroastcoffee.com'),
   title: 'Secret Roast Coffee — Coming Soon',
   description: 'Your daily ritual, our hidden craft. A specialty coffee roastery coming soon to Guatemala City.',
   openGraph: {
@@ -41,6 +42,10 @@ export const metadata: Metadata = {
     title: 'Secret Roast Coffee — Coming Soon',
     description: 'The secret is in the roast.',
     images: ['/og-image.jpg'],
+  },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 };
 

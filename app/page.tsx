@@ -5,10 +5,12 @@ import { ProductReveal } from '@/components/sections/ProductReveal';
 import { ComingSoon } from '@/components/sections/ComingSoon';
 import { LeadCapture } from '@/components/sections/LeadCapture';
 import { Footer } from '@/components/sections/Footer';
+import { BrandSeal } from '@/components/ui/BrandSeal';
 
 export default function Home() {
   return (
     <>
+      <BrandSeal />
       <div className="fixed top-0 left-0 right-0 h-1 bg-[var(--color-roast-espresso)] overflow-hidden z-[60]">
         <div className="h-full bg-[var(--color-roast-amber)] w-[200%] md:w-[150%] xl:w-1/3 animate-marquee" />
       </div>
