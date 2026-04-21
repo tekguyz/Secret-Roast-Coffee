@@ -3,8 +3,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function EmailForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +49,7 @@ export function EmailForm() {
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="font-serif text-xl sm:text-2xl text-[var(--color-roast-cream)] mb-2"
             >
-              Welcome to the Hidden Circle.
+              {t.leadCapture.form.success.headline}
             </motion.h4>
             <motion.p
               initial={{ y: 10, opacity: 0 }}
@@ -55,7 +57,7 @@ export function EmailForm() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="font-mono text-[10px] text-[var(--color-roast-amber)] uppercase tracking-[0.2em]"
             >
-              The secret finds you soon.
+              {t.leadCapture.form.success.subheadline}
             </motion.p>
           </motion.div>
         ) : (
@@ -76,7 +78,7 @@ export function EmailForm() {
             <input
               type="email"
               name="email"
-              placeholder="your@email.com"
+              placeholder={t.leadCapture.form.placeholder}
               required
               disabled={status === 'submitting'}
               className="w-full h-full bg-[var(--color-roast-espresso)] border border-[var(--color-roast-charcoal)] px-6 pr-32 sm:pr-40 text-[var(--color-roast-cream)] font-mono text-sm placeholder:text-[var(--color-roast-charcoal)] focus:outline-none focus:border-[var(--color-roast-gold)] focus:shadow-[0_0_20px_oklch(76%_0.16_80_/_0.15)] transition-all duration-300 disabled:opacity-50"
@@ -87,7 +89,7 @@ export function EmailForm() {
               disabled={status === 'submitting'}
               className="absolute right-2 top-2 bottom-2 bg-[var(--color-roast-amber)] px-4 sm:px-6 text-[var(--color-roast-black)] font-mono text-[10px] sm:text-[10px] font-bold tracking-widest uppercase hover:bg-[var(--color-roast-gold)] transition-colors duration-300 disabled:opacity-50 flex items-center justify-center whitespace-nowrap"
             >
-              <span>{status === 'submitting' ? 'CLAIMING...' : 'CLAIM SPOT'}</span>
+              <span>{status === 'submitting' ? t.leadCapture.form.submitting : t.leadCapture.form.cta}</span>
             </button>
           </motion.form>
         )}

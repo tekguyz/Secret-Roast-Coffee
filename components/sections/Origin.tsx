@@ -3,8 +3,11 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { fadeUp, staggerContainer } from '@/lib/animations';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function Origin() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full h-[80vh] min-h-[600px] flex flex-col justify-end overflow-hidden border-none">
       {/* Divider */}
@@ -34,7 +37,7 @@ export function Origin() {
           {/* Section Label */}
           <motion.div variants={fadeUp}>
             <span className="font-mono text-[10px] text-[var(--color-roast-amber)] tracking-[0.2em] sm:tracking-[0.3em] uppercase">
-              002 / ORIGIN
+              {t.origin.label}
             </span>
           </motion.div>
 
@@ -43,8 +46,8 @@ export function Origin() {
             variants={fadeUp}
             className="font-serif text-5xl sm:text-6xl lg:text-7xl text-[var(--color-roast-cream)] editorial-headline"
           >
-            From the <br className="hidden sm:block" />
-            <span className="italic font-black text-[var(--color-roast-cream)]">Highlands.</span>
+            {t.origin.headline} <br className="hidden sm:block" />
+            <span className="italic font-black text-[var(--color-roast-cream)]">{t.origin.headlineItalic}</span>
           </motion.h2>
 
           {/* Body */}
@@ -52,8 +55,7 @@ export function Origin() {
             variants={fadeUp}
             className="font-sans font-light text-base sm:text-lg text-[var(--color-roast-fog)] leading-[1.65] max-w-md"
           >
-            Grown in volcanic soil at altitude. <br />
-            Harvested by hand. Roasted with intent.
+            {t.origin.body}
           </motion.p>
 
           {/* Pills */}
@@ -63,15 +65,15 @@ export function Origin() {
           >
             <div className="bg-[var(--color-roast-espresso)] border border-[var(--color-roast-charcoal)] px-4 py-1.5 text-[var(--color-roast-amber)] font-mono text-[10px] tracking-wider uppercase rounded-full flex items-center space-x-2">
               <span className="text-sm">🌋</span>
-              <span>1,500m+ Altitude</span>
+              <span>{t.origin.pills.altitude}</span>
             </div>
             <div className="bg-[var(--color-roast-espresso)] border border-[var(--color-roast-charcoal)] px-4 py-1.5 text-[var(--color-roast-amber)] font-mono text-[10px] tracking-wider uppercase rounded-full flex items-center space-x-2">
               <span className="text-sm">☕</span>
-              <span>Single Origin</span>
+              <span>{t.origin.pills.origin}</span>
             </div>
             <div className="bg-[var(--color-roast-espresso)] border border-[var(--color-roast-charcoal)] px-4 py-1.5 text-[var(--color-roast-amber)] font-mono text-[10px] tracking-wider uppercase rounded-full flex items-center space-x-2">
               <span className="text-sm">🔥</span>
-              <span>Slow Roast</span>
+              <span>{t.origin.pills.roast}</span>
             </div>
           </motion.div>
 

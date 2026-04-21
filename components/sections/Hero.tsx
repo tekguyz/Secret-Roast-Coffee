@@ -6,8 +6,10 @@ import { maskReveal, staggerContainer, fadeUp } from '@/lib/animations';
 import { ArrowDown } from 'lucide-react';
 import { SteamEffect } from '@/components/ui/SteamEffect';
 import { Logo } from '@/components/ui/Logo';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function Hero() {
+  const { t } = useLanguage();
   const words = ['SECRET', 'ROAST'];
 
   return (
@@ -44,7 +46,7 @@ export function Hero() {
             <Logo className="w-20 h-auto opacity-20 mb-4 -ml-2" />
             
             <span className="font-mono text-[10px] sm:text-xs text-[var(--color-roast-amber)] tracking-[0.2em] sm:tracking-[0.3em] uppercase">
-              Est. Guatemala
+              {t.hero.taglineTop}
             </span>
           </motion.div>
 
@@ -79,7 +81,7 @@ export function Hero() {
             className="mt-4 flex flex-col space-y-8 sm:space-y-12"
           >
             <p className="font-mono text-xs sm:text-sm text-[var(--color-roast-cream)] uppercase tracking-[0.15em] sm:tracking-[0.25em] leading-relaxed max-w-md sm:max-w-none">
-              Your daily ritual.<br className="sm:hidden" /> Our hidden craft.
+              {t.hero.taglineBottomLeft}<br className="sm:hidden" /> {t.hero.taglineBottomRight}
             </p>
 
             <motion.a
@@ -89,7 +91,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
               className="group inline-flex items-center space-x-4 border border-[var(--color-roast-cream)] px-6 py-4 uppercase font-mono text-xs tracking-widest text-[var(--color-roast-cream)] hover:bg-[var(--color-roast-cream)] hover:text-[var(--color-roast-black)] transition-colors duration-300 w-fit"
             >
-              <span>Enter the list</span>
+              <span>{t.hero.cta}</span>
               <ArrowDown className="w-4 h-4 stroke-thin group-hover:translate-y-1 transition-transform" />
             </motion.a>
           </motion.div>

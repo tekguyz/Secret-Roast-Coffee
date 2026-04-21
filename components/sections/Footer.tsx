@@ -1,7 +1,12 @@
+'use client';
+
 import { ArrowUpRight } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="px-6 sm:px-12 py-12 border-none flex flex-col sm:flex-row justify-between items-center bg-[var(--color-roast-black)] relative gap-8">
       {/* Top vanishing divider */}
@@ -9,8 +14,8 @@ export function Footer() {
       
       <div className="flex flex-col items-center sm:items-start space-y-4">
         <Logo className="w-16 h-auto text-[var(--color-roast-amber)]" />
-        <p className="font-mono text-[10px] text-[var(--color-roast-fog)] uppercase tracking-[0.3em] leading-relaxed">
-          Guatemala to <br className="sm:hidden" /> the World
+        <p className="font-mono text-[10px] text-[var(--color-roast-fog)] uppercase tracking-[0.3em] leading-relaxed text-center sm:text-left">
+          {t.footer.branding}
         </p>
       </div>
 
@@ -21,7 +26,7 @@ export function Footer() {
             <ArrowUpRight className="w-3 h-3 stroke-thin" />
           </a>
           <a href="#" className="font-mono text-[10px] text-[var(--color-roast-fog)] uppercase tracking-widest hover:text-[var(--color-roast-amber)] transition-colors">
-            Privacy
+            {t.footer.privacy}
           </a>
         </div>
         <p className="font-mono text-[10px] text-[var(--color-roast-charcoal)] uppercase tracking-widest">

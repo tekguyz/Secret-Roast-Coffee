@@ -4,9 +4,11 @@ import { motion } from 'motion/react';
 import { CountdownTimer } from '@/components/ui/CountdownTimer';
 import { ArrowUpRight } from 'lucide-react';
 import { fadeUp } from '@/lib/animations';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function ComingSoon() {
-  const marqueeText = "COMING SOON · SECRET ROAST COFFEE · GUATEMALA CITY · ";
+  const { t } = useLanguage();
+  const marqueeText = t.comingSoon.marquee;
   const marqueeItems = new Array(10).fill(marqueeText);
 
   return (
@@ -23,8 +25,8 @@ export function ComingSoon() {
           variants={fadeUp}
           className="mb-8"
         >
-          <span className="font-mono text-[10px] text-[var(--color-roast-amber)] tracking-[0.2em] uppercase">
-            THE SHELTER IS BEING BUILT
+          <span className="font-mono text-[10px] text-[var(--color-roast-amber)] tracking-[0.2em] uppercase text-center block">
+            {t.comingSoon.label}
           </span>
         </motion.div>
 
@@ -65,7 +67,7 @@ export function ComingSoon() {
           
           <div className="flex flex-col space-y-4">
             <p className="font-sans text-sm sm:text-base text-[var(--color-roast-cream)] leading-relaxed italic">
-              &quot;We toast the rules. We built the shelter. COMING SOON&quot;
+              {t.comingSoon.igQuote}
             </p>
             <a 
               href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "#"} 

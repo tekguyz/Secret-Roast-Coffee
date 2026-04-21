@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Playfair_Display, DM_Sans, Space_Mono } from 'next/font/google';
 import './globals.css';
 import { GrainOverlay } from '@/components/ui/GrainOverlay';
+import { content } from '@/config/site-content';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -24,28 +25,42 @@ const spaceMono = Space_Mono({
   display: 'swap',
 });
 
+// Default to Spanish metadata for SEO/Crawlability as per brand location
+const t = content.es.metadata;
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://secretroastcoffee.com'),
-  title: 'Secret Roast Coffee — Coming Soon',
-  description: 'Your daily ritual, our hidden craft. A specialty coffee roastery coming soon to Guatemala City.',
+  title: t.title,
+  description: t.description,
   openGraph: {
-    title: 'Secret Roast Coffee',
-    description: 'The secret is in the roast.',
+    title: t.ogTitle,
+    description: t.ogDescription,
     url: 'https://secretroastcoffee.com',
     siteName: 'Secret Roast Coffee',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
-    locale: 'en_US',
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&h=630&auto=format&fit=crop', 
+        width: 1200, 
+        height: 630,
+        alt: 'Secret Roast Coffee - Premium Guatemalan Highlands'
+      }
+    ],
+    locale: 'es_GT',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Secret Roast Coffee — Coming Soon',
-    description: 'The secret is in the roast.',
-    images: ['/og-image.jpg'],
+    title: t.title,
+    description: t.ogDescription,
+    images: ['https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200&h=630&auto=format&fit=crop'],
   },
   icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
   },
 };
 

@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { fadeUp, staggerContainer } from '@/lib/animations';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const products = [
   {
@@ -29,6 +30,8 @@ const products = [
 ];
 
 export function ProductReveal() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative bg-[var(--color-roast-black)] py-12 sm:py-24 border-none">
       {/* Divider */}
@@ -47,7 +50,7 @@ export function ProductReveal() {
           <div className="flex flex-col space-y-4 max-w-xl">
             <motion.div variants={fadeUp}>
               <span className="font-mono text-[10px] text-[var(--color-roast-amber)] tracking-widest uppercase">
-                003 / THE ROAST
+                {t.productReveal.label}
               </span>
             </motion.div>
             
@@ -55,18 +58,17 @@ export function ProductReveal() {
               variants={fadeUp}
               className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[var(--color-roast-cream)] editorial-headline"
             >
-              The lineup <br />
-              <span className="italic font-black">is classified.</span>
+              {t.productReveal.headline} <br />
+              <span className="italic font-black">{t.productReveal.headlineItalic}</span>
             </motion.h2>
           </div>
 
           <motion.div variants={fadeUp} className="flex flex-col space-y-4 max-w-sm mt-4">
             <p className="font-sans font-light text-sm text-[var(--color-roast-fog)] leading-relaxed">
-              Three roasts. Each with a story. <br />
-              The full reveal drops at launch.
+              {t.productReveal.body}
             </p>
             <a href="#lead-capture" className="inline-block border border-[var(--color-roast-amber)] px-4 py-3 text-center text-[var(--color-roast-amber)] font-mono text-[10px] sm:text-xs tracking-widest uppercase hover:bg-[var(--color-roast-amber)] hover:text-[var(--color-roast-black)] transition-colors duration-300">
-              JOIN THE LIST FOR EARLY ACCESS
+              {t.productReveal.cta}
             </a>
           </motion.div>
         </motion.div>
@@ -108,7 +110,7 @@ export function ProductReveal() {
                   <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
                     <div className="bg-[var(--color-roast-amber)] border border-[var(--color-roast-black)] px-6 py-2 rotate-[-2deg] backdrop-blur-md noise-stamp shadow-xl">
                       <span className="font-mono text-xs sm:text-sm text-[var(--color-roast-black)] font-black tracking-[0.25em] uppercase">
-                        [REDACTED]
+                        {t.productReveal.redacted}
                       </span>
                     </div>
                   </div>
