@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Playfair_Display, DM_Sans, Space_Mono } from 'next/font/google';
 import './globals.css';
 import { GrainOverlay } from '@/components/ui/GrainOverlay';
@@ -24,6 +24,11 @@ const spaceMono = Space_Mono({
   variable: '--font-space-mono',
   display: 'swap',
 });
+
+// Browser UI / Status Bar color
+export const viewport: Viewport = {
+  themeColor: '#0c0c0c',
+};
 
 // Default to Spanish metadata for SEO/Crawlability as per brand location
 const t = content.es.metadata;

@@ -1,12 +1,30 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="32" height="32" fill="oklch(8% 0.02 50)"/>
-  
-  <!-- Centered Logo (Simplified for small scale) -->
-  <g transform="translate(4, 10) scale(0.06)">
-    <path d="M200 40C120 40 40 100 20 120C40 140 120 160 200 160C280 160 360 140 380 120C360 100 280 40 200 40Z" stroke="oklch(76% 0.16 80)" stroke-width="12" />
-    <path d="M140 110C160 85 240 85 260 110L250 115C230 95 170 95 150 115L140 110Z" fill="oklch(76% 0.16 80)" />
-    <circle cx="185" cy="105" r="8" fill="oklch(76% 0.16 80)" />
-    <circle cx="215" cy="105" r="8" fill="oklch(76% 0.16 80)" />
+  <!-- 
+    Refined Favicon: 
+    - High-contrast Gold (Roast Gold)
+    - Thicker strokes for visibility at 16px/32px
+    - Transparent background to work with all browser themes
+  -->
+  <g transform="translate(1, 6) scale(0.075)">
+    <!-- Main Leaf Outline (Thickened) -->
+    <path 
+      d="M200 40C120 40 40 100 20 120C40 140 120 160 200 160C280 160 360 140 380 120C360 100 280 40 200 40Z" 
+      stroke="oklch(76% 0.16 80)" 
+      stroke-width="32" 
+      stroke-linecap="round"
+    />
+    
+    <!-- The "Peeking" Brows (Bolder) -->
+    <path 
+      d="M130 115C155 80 245 80 270 115" 
+      stroke="oklch(76% 0.16 80)" 
+      stroke-width="24"
+      stroke-linecap="round"
+      fill="none"
+    />
+    
+    <!-- The Eyes (Larger) -->
+    <circle cx="170" cy="110" r="15" fill="oklch(76% 0.16 80)" />
+    <circle cx="230" cy="110" r="15" fill="oklch(76% 0.16 80)" />
   </g>
 </svg>
