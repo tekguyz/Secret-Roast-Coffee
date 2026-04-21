@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-roast-black: #0A0705;
+  --color-roast-espresso: #1C1009;
+  --color-roast-charcoal: #2D2118;
+  --color-roast-brown: #6B3D1E;
+  --color-roast-amber: #C8702A;
+  --color-roast-gold: #E8A84C;
+  --color-roast-cream: #F5ECD7;
+  --color-roast-fog: #A89880;
+
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-space-mono);
+
+  --animate-ken-burns: ken-burns 8s ease-out forwards;
+}
+
+@utility animate-ken-burns {
+  animation: ken-burns 8s ease-out forwards;
+}
+
+@utility hide-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes ken-burns {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+body {
+  background-color: var(--color-roast-black);
+  color: var(--color-roast-cream);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #C8702A;
+  color: #F5ECD7;
+}
+
+@keyframes marquee_20s_linear_infinite {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@utility animate-marquee {
+  animation: marquee_20s_linear_infinite 20s linear infinite;
+}
+
+@utility editorial-headline {
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+}
+
+@utility h-divider-vanishing {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--color-roast-charcoal), transparent);
+}
+
+@utility v-divider-vanishing {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--color-roast-charcoal), transparent);
+}
+
+@utility noise-stamp {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+}
